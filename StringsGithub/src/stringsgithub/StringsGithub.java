@@ -12,15 +12,23 @@ public class StringsGithub {
     public static void main(String[] args) {
         String cadena; // Las cadenas empiezan en 0
         int cont=0;
+        boolean salida=false;
         Scanner sc=new Scanner (System.in);
-        System.out.print("Anota caracter --> ");
-        char caracter=sc.nextLine().charAt(0);
-        caracter=Character.toUpperCase(caracter); //Pasar a mayúsculas
-        System.out.print("Anota cadena --> ");
-        cadena=sc.nextLine();
-        cadena=cadena.toUpperCase(); // Hace mayúsculas las cadenas
-        cont=contador(caracter, cadena);
-        System.out.println("El caraceter "+caracter+ " aparece "+cont+" veces");
+        do{
+            System.out.print("Anota caracter --> ");
+            char caracter=sc.nextLine().charAt(0);
+            caracter=Character.toUpperCase(caracter); //Pasar a mayúsculas
+            System.out.print("Anota cadena --> ");
+            cadena=sc.nextLine();
+            cadena=cadena.toUpperCase(); // Hace mayúsculas las cadenas
+            cont=contador(caracter, cadena);
+            System.out.println("El caraceter "+caracter+ " aparece "+cont+" veces");
+            System.out.println("Para finalizar, pulse F");
+            char seguir=sc.nextLine().charAt(0);
+
+            if(seguir=='F' || seguir=='f')
+                salida=true;
+        }while(salida==false);
     }
     public static int contador (char caracter, String cadena){
         int cont=0;
