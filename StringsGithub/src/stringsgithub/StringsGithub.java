@@ -13,18 +13,22 @@ public class StringsGithub {
         String cadena; // Las cadenas empiezan en 0
         int cont=0;
         Scanner sc=new Scanner (System.in);
-        System.out.println("¿Por qué letra empieza?");
+        System.out.print("Anota caracter --> ");
         char caracter=sc.nextLine().charAt(0);
-        caracter=Character.toUpperCase(caracter);
-        System.out.println("Anota cadena");
+        caracter=Character.toUpperCase(caracter); //Pasar a mayúsculas
+        System.out.print("Anota cadena --> ");
         cadena=sc.nextLine();
         cadena=cadena.toUpperCase(); // Hace mayúsculas las cadenas
+        cont=contador(caracter, cadena);
+        System.out.println("El caraceter "+caracter+ " aparece "+cont+" veces");
+    }
+    public static int contador (char caracter, String cadena){
+        int cont=0;
         for(int i=0; i<cadena.length(); i++){
             char letra=cadena.charAt(i);
             if (letra==caracter)
                 cont++;
         }
-        System.out.println("La letra "+ caracter +" se repite "+cont+ " veces");
+        return cont;
     }
-    
 }
